@@ -18,7 +18,7 @@ class Post(models.Model):
         null=True,
         on_delete=models.CASCADE,
         related_name='posts'
-        )
+    )
 
 
 class Group(models.Model):
