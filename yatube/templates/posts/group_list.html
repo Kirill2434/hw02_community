@@ -7,23 +7,23 @@
 {% block content %}
 
 <div class="container py-5">
-  <h1>Лев Толстой – зеркало русской революции.</h1>
+  <h1>{{ group }}</h1>
   <p>
-    Группа тайных поклонников графа.
+    {{ group.description|linebreaksbr }}
   </p>
   <article>
-    {% for post in posts %}
-    <ul>
-      <li>
-        Автор: {{ post.author.get_full_name }}
-      </li>
-      <li>
-        Дата публикации: {{ post.pub_date|date:"d E Y" }}
-      </li>
-    </ul>
-    <p>
-      {{ post.text }}
-    </p>
+      {% for post in posts %}
+      <ul>
+        <li>
+          Автор: {{ post.author.get_full_name }}
+        </li>
+        <li>
+          Дата публикации: {{ post.pub_date|date:"d E Y" }}
+        </li>
+      </ul>
+      <p>
+        {{ post.text|linebreaksbr }}
+      </p>
     {% endfor %}
   </article>
 </div>
