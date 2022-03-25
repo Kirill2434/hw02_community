@@ -19,7 +19,8 @@
           {{ post.text|linebreaksbr }}
         </p>
       </article>
-      <hr>
+      {% if not forloop.last %}
+      <hr>{% endif %}
     {% endfor %}
   </div>
 {% endblock %}

@@ -23,10 +23,9 @@
             все записи группы {{ post.group }}
           </a>
         {% endif %}
-        {% if not forloop.last %}
-        {% endif %}
       </article>
-      <hr>
+      {% if not forloop.last %}
+      <hr>{% endif %}
     {% endfor %}
   </div>
 {% endblock %}
