@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-  Пост <!-- Первые 30 букв поста --> {{ author.get_full_name }}
+  Пост {{ posts.text|truncatechars:30 }}
 {% endblock %}
 {% block content %}
   <div class="row">
@@ -9,11 +9,10 @@
         <li class="list-group-item">
           Дата публикации: {{ posts.pub_date|date:"d E Y" }}
         </li>
-        <!-- если у поста есть группа -->
-        {% if post.group %}
+        {% if posts.group %}
           <li class="list-group-item">
             Группа:
-            <a href="{% url 'posts:group_lists' post.group.slug %}">
+            <a href="{% url 'posts:group_lists' posts.group.slug %}">
               все записи группы {{ posts.group }}
             </a>
           </li>
