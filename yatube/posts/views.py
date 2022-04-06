@@ -48,9 +48,11 @@ def profile(request, username):
 
 
 def post_detail(request, post_id):
-    posts = Post.objects.get(id=post_id)
-    posts_numbers = Post.objects.count()
+    posts = get_object_or_404(Post, id=post_id)
+    author = posts.author
+    posts_numbers = author.posts.count()
     context = {
+        'author': author,
         'posts': posts,
         'posts_numbers': posts_numbers,
     }
