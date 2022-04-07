@@ -32,7 +32,7 @@
           {% if is_edit %}
             <form method="POST" action="{% url 'posts:post_edit' posts.pk %}">
           {% else %}
-            {% url 'post:post_create' %}">
+            {% url 'posts:post_create' %}">
           {% endif %}
           {% csrf_token %}
           {% for field in form %}
