@@ -32,6 +32,11 @@
       <p>
         {{ posts.text|linebreaks }}
       </p>
+      {% if request.user == posts.author %}
+        <a class='btn btn-primary' href="{% url 'posts:post_edit' posts.pk %}">
+          Редактировать запись
+        </a>
+      {% endif %}
     </article>
   </div>
 {% endblock %}

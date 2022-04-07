@@ -79,7 +79,7 @@ class TestPost:
             'Свойство `author` модели `Post` должно быть ссылкой на другую модель `ForeignKey`'
         )
         assert author_field.related_model == get_user_model(), (
-            'Свойство `author` модели `Post` должно быть ссылкой на модель пользователя `User`'
+            'Свойство `author` модели `Post` должно быть ссылкой на модель пользователя `Group`'
         )
 
         group_field = search_field(model_fields, 'group_id')
